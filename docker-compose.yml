@@ -21,6 +21,8 @@ services:
       - "6379:6379"
 
   app:
+    stdin_open: true
+    tty: true
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
@@ -29,7 +31,8 @@ services:
     depends_on:
       - db
       - redis
-    # env_file: .docker/.env
+    volumes:
+      - '.:/var/www/my_app'
     ports:
       - "3000:3000"
 

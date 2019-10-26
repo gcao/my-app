@@ -5,10 +5,10 @@ FROM ruby:2.6.3-alpine
 RUN apk update && apk add --update --no-cache --virtual build-dependency build-base ruby-dev postgresql-dev git sqlite-dev
 
 # Set an environment variable where the Rails app is installed to inside of Docker image
-ENV RAILS_ROOT /var/www/app_name
+ENV RAILS_ROOT /var/www/my_app
 
 # make a new directory where our project will be copied
-RUN mkdir -p $RAILS_ROOT
+# RUN mkdir -p $RAILS_ROOT
 
 # Set working directory within container
 WORKDIR $RAILS_ROOT
@@ -41,4 +41,5 @@ RUN bundle exec rake assets:precompile
 
 EXPOSE 3000
 
+# bundle exec puma -C config/puma.rb
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

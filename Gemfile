@@ -14,6 +14,7 @@ gem "bootsnap", require: false
 gem "honeybadger"
 gem "pg"
 gem "puma"
+gem 'puma_worker_killer'
 gem "rack-canonical-host"
 gem "rails", "~> 6.0.0"
 gem "recipient_interceptor"

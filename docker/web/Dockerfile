@@ -9,7 +9,7 @@ ARG RAILS_ENV
 ENV RAILS_ENV $RAILS_ENV
 
 # establish where Nginx should look for files
-ENV RAILS_ROOT /var/www/app_name
+ENV RAILS_ROOT /var/www/my_app
 
 # Set our working directory inside the image
 WORKDIR $RAILS_ROOT

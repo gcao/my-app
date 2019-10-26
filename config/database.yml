@@ -8,4 +8,4 @@ default: &default
 
 development:
   <<: *default
-  database: app_name_development
+  database: my_app_development
